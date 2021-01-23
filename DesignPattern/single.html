@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单例模式弹窗</title>
+    <style>
+        .model {
+            border: 1px solid black;
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%, 0);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点击弹窗</button>
+    <script>
+        var getSingle = function (fn) {
+            var result;
+            return function () {
+              return result || (result = fn.apply(this, arguments))
+            }
+        }
+
+        var createLayer = function () {
+            var doc = document.createElement('div')
+            doc.innerHTML = '我是浮窗';
+            doc.className = 'model'
+            doc.style.display = 'none'
+            document.body.appendChild(doc)
+            return doc
+        }
+
+        var createSingleLayer = getSingle(createLayer);
+    
+        document.querySelector('#btn').onclick = function () {
+            var instance = createSingleLayer();
+            instance.style.display = 'block'
+        }
+
+    </script>
+</body>
+</html>
