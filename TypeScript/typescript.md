@@ -155,3 +155,61 @@ foo2.log();
 console.log(foo2.ns);
 foo2.baz('lalala')
 ```
+
+
+### [TypeScript 中提升幸福感的 10 个高级技巧](https://segmentfault.com/a/1190000039030887)
+
+
+### Typescript 中的 interface 和 type
+
+- 相同点
+  ```
+    interface Name {
+      name: string
+    }
+
+    interface User extends Name {
+      age: number
+    }
+
+
+    
+    interface SetUser {
+      (name: string, age: number): void;
+    }
+
+    type Name {
+      name: string
+    }
+
+    type User = Name & (age: number)
+
+    type SetUser = (name: string, age: number) : void
+
+  ```
+
+- 不同点-
+
+  ```
+  // 可以声明基本类型别名，联合类型，元组等类型
+    type Name = string
+    interface Dog {
+     wong();
+    }
+    interface Cat {
+      miao();
+    }
+    type Pet = Dog | Cat
+    type PetList = [Dog, Pet]
+  // 当你想获取一个变量的类型时，使用 typeof
+    let div = document.createElement('div');
+    type B = typeof div
+  // 其他骚操作
+    type StringOrNumber = string | number; 
+    type Text = string | { text: string }; 
+    type NameLookup = Dictionary<string, Person>; 
+    type Callback<T> = (data: T) => void; 
+    type Pair<T> = [T, T]; 
+    type Coordinates = Pair<number>; 
+    type Tree<T> = T | { left: Tree<T>, right: Tree<T> };
+  ```
