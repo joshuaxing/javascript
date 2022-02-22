@@ -1,11 +1,4 @@
-/*
- * @Author: your name
- * @Date: 2021-01-05 16:00:31
- * @LastEditTime: 2021-01-06 09:25:18
- * @LastEditors: Please set LastEditors
- * @Description: 接口
- * @FilePath: \TypeScript\greeter.ts
- */
+
 
 // 定义一个参数
 interface SquareConfig {
@@ -54,7 +47,6 @@ interface ClockConstructor {
   new (hour: number, minute: number): ClockInterface;
 }
 interface ClockInterface {
-  tick();
 }
 
 function createClock(
