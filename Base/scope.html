@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>作用域｜作用域链</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // [[scope]] -> Scope Chain -> GO
+        // 1. 函数创建时，生成的一个js内部的隐式属性
+        // 2. 作用域链Scope Chain：函数储存作用域链的容器
+        //     AO/GO
+        //     AO，函数的执行期上下文
+        //     GO，全局的执行期上下文
+        //  函数执行完成以后，AO是要销毁的，AO是一个即时的储存容器
+        // 原始值 存在 栈内存  
+        // 引用值 存在 堆内存 栈内存有引用值的地址
+        function a() {
+            function b() {
+              var b = 2;
+            }
+            var a = 1;
+            b();
+        }
+        var c = 3;
+        a();
+
+        
+    </script>
+</body>
+</html>

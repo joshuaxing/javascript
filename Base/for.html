@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>for循环</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        // for(var i = 0; i< 10; i++) {
+        //     console.log(i)
+        // }
+        // for循环
+        // for（）{
+        // 执行语句
+        // }
+        // 步骤
+        // 1、声明变量 i = 0
+        // 2、if （i < 10）{
+        //   console.log(i)
+        // }
+        // 3、i++
+        // 2、if（i <10）{ 不满足条件 停止循环
+        // console.log(i)
+        // }
+        // 3、i++
+       
+        // for循环拆分 等价于 while
+        //    var i = 0;
+        //    for(; i < 10;) {
+        //       console.log(i);
+        //       i++
+        //    }
+        //    while(i < 10) {
+        //      console.log(i);
+        //      i++
+        //    }
+
+        // 面试题 -  > i打印1-10后终止
+        //    var i = 1;
+        //    for(;i;){
+        //     console.log(i)
+        //     i++;
+        //     if(i === 11) {
+        //       i = 0  // break
+        //     }
+        //    }
+
+       // 100以内的数跳过可以被7整除或者个位数是7的数
+        //    for(i = 0; i < 100; i++) {
+        //     if(i%7 === 0 || i%10 == 7) {
+        //       continue;
+        //     }
+        //     console.log(i);
+        //    }
+
+       // 打印0-99
+       // ()只能有一句，不能写比较
+       // {} 不能出现i++ i--
+       //    var i = 100;
+       //    for(;i--;) {
+       //     console.log(i)
+       //    }
+
+       // 10的5次方
+        //    var total = 1;
+        //    var n = 5
+        //    for(i = 0;i <= n; i++) {
+        //      total *= 10
+        //    }
+
+       // n阶乘
+        //    var num = 1
+        //    var n = 5
+        //    for(i = 0; i<= n; i++) {
+        //     num *= i
+        //    }
+
+       // 打印7、8、9
+        // var num = 789
+        // var a = num % 10;
+        // var b = (num - a) % 100 / 10;
+        // var c = (num - a - b*10) / 100;
+        // console.log('' + c + b + a) // 7,8,9
+
+       // 打印100以内的质数
+       // 仅仅能被1和自己整除
+        //    var c = 0;
+        //    for (var i = 2; i < 100; i++) {
+        //        for (var j = 0; j <= i; j++) {
+        //            if (i%j ===0 ) {
+        //             c++
+        //            }
+        //        }
+        //        if (c === 2) {
+        //         console.log(i);
+        //        }
+        //        c = 0;
+        //    }
+
+       // typeof 面试题
+       console.log(typeof(a)); //undefined
+       console.log(typeof(typeof(a))) // string
+
+       // 16进制 0123456789abcdef
+
+       // 隐式类型转换
+       'a' > 'b' // ascii
+       undefined == 0; // false
+       null == 0; // false
+       undefined == null; // true
+       NaN == NaN // false
+
+       // NaN Number转化之后
+       var value = '123' | 123 | null 
+       isNaN(value) // false
+       isNaN(undefined) // true
+
+       // 斐波那契数列
+       var n1 = 1;
+       var n2 = 1;
+       var n3 = 0;
+       var n = 8;
+       for(i = 2; i < n; i) {
+         n3 = n1 + n2;
+         n1 = n2;
+         n2 = n3;
+       }
+
+
+    </script>
+</body>
+</html>

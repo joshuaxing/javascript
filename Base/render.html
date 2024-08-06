@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>预编译</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 预编译
+        // 1. 检查通篇的语法错误
+
+        // 暗示全局变量 imply global variable
+        function test() {
+          var a = b = 2;
+        }
+        // test()
+        // console.log(b) // 2
+        // console.log(window.b) // 2
+        //console.log(a) // 报错 a is no defined
+
+        // AO activation object
+        // 活跃对象， 函数上下文
+        // 1. 寻找形参和变量声明
+        // 2. 实参赋值给形参
+        // 3. 找函数声明，赋值
+        // 4. 执行
+
+        function test2(a) {
+            console.log(a);
+            var a = 1;
+            console.log(a);
+            function a() {}
+            console.log(a);
+            var b = function(){}
+            console.log(b)
+            function d(){}
+        }
+        // test2(2); // unction a() {} 、1、1、function(){}、function d(){}
+        
+        // AO = {
+        //   a: undefined -> 
+        //         2 ->
+        //         function a() {} ->
+        //         1,
+        //   b: function(){},
+        //   d: function d(){}
+        // }
+
+        function test3(a, b){
+          console.log(a);
+          c = 0;
+          var c;
+          a = 5;
+          b = 6;
+          console.log(a);
+          console.log(b)
+          function b(){}
+          function d(){}
+          console.log(b);
+        }
+        // test3(1) // 1, 5, 6, 6
+
+
+        // GO gloabl object 全局上下文
+        // 1. 找变量
+        // 2. 找函数声明
+        // 3. 执行
+        // console.log(a, b); // function a() {}, undefined
+        function a() {}
+        var b = function() {}
+
+
+
+        console.log(!!' ' + !!'' - !!false || '未通过') // 1
+
+        window.a || (window.a = '1')
+        console.log(window.a); // 1 括号的优先级最高
+        
+    </script>
+</body>
+</html>

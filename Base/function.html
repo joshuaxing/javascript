@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // 高内聚，低耦合 模块的单一责任制
+
+        // 形参 占位
+        function test(a, b, c) {
+          a = 3;
+          c = 4;
+          // arguments
+          console.log(a, b);
+          console.log(arguments[0]) // 3
+          console.log(arguments[2]) // undefined
+        }
+        // 实参  实参和形参对应关系，才能更改argument的值
+        test(1, 2);
+
+        // 初始化参数
+        function test2(a, b){
+            var a = arguments[0] || 1;
+            var b = arguments[1] || 2;
+        }
+
+        test2()
+
+        // 全局变量 [[scope]]
+
+        // n的阶乘
+        // n! = n * (n-1)!
+        function fact(n) {
+          if(n === 1) {
+            return 1;
+          }
+          return n * fact(n - 1);
+        }
+
+        // 斐波那契数列
+        //n3 = n2 + n1
+        function fb(n) {
+          if(n <= 2) {
+            return 1;
+          }
+          return fb(n - 1) + fb(n - 2);
+        }
+
+
+    </script>
+</body>
+</html>
